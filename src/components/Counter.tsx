@@ -9,7 +9,7 @@ import { increment } from "./counterSlice";
 
 const Counter = (props: PropsFromRedux) => {
   return (
-    <div>
+    <div style={{textAlign: "center"}}>
       <div>
         {props.value}
       </div>

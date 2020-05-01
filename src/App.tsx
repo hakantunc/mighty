@@ -5,11 +5,13 @@ import Counter from './components/Counter';
 
 const App = () => {
   return (
-    <div className="App">
-      <h1>
-        Hello There!
-      </h1>
-      <Counter />
+    <div className='container'>
+      <div className='row justify-content-around'>
+        <h1>Hello There!</h1>
+      </div>
+      <div className='row justify-content-around'>
+        <Counter />
+      </div>
     </div>
   );
 };
