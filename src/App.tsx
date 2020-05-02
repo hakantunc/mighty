@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 
 import Counter from './components/Counter';
+import Tile from './components/Tile';
 
 const App = () => {
   return (
@@ -11,6 +12,9 @@ const App = () => {
       </div>
       <div className='row justify-content-around'>
         <Counter />
+      </div>
+      <div className='row justify-content-around'>
+        <Tile />
       </div>
     </div>
   );
