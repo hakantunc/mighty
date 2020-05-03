@@ -11,10 +11,10 @@ const App = () => {
         <h1>Hello There!</h1>
       </div>
       <div className='row justify-content-around'>
-        <Counter />
+        <Tile />
       </div>
       <div className='row justify-content-around'>
-        <Tile />
+        <Counter />
       </div>
     </div>
   );
