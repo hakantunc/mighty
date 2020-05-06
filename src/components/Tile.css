@@ -1,5 +1,6 @@
 .tile {
-  width: 128px;
-  height: 128px;
   background: lightblue;
+  height: 128px;
+  margin: 1px;
+  width: 128px;
 }

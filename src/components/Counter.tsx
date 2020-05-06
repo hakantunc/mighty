@@ -22,7 +22,7 @@ const Counter = (props: PropsFromRedux) => {
 };
 
 const mapStateToProps = (state: RootState) => {
-  return {value: state};
+  return {value: state.counter};
 };
 const mapDispatchToProps = {
   increment: () => increment(),

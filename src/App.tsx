@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 import Counter from './components/Counter';
-import Tile from './components/Tile';
+import FlatTorus from './components/FlatTorus';
 
 const App = () => {
   return (
@@ -11,7 +11,7 @@ const App = () => {
         <h1>Hello There!</h1>
       </div>
       <div className='row justify-content-around'>
-        <Tile />
+        <FlatTorus />
       </div>
       <div className='row justify-content-around'>
         <Counter />
