@@ -6,13 +6,25 @@ import { RootState } from "../store";
 
 const FlatTorus = (props: PropsFromRedux) => {
   const n = 3;
-  const row = [];
-  for (let i = 0; i < n; i++) {
-    row.push(<Tile key={i}/>);
-  }
+  const { height, width, position} = props;
   const board = [];
-  for (let i = 0; i < n; i++) {
-    board.push(<div key={i} className="row">{row}</div>);
+  const rowStart = position.row - (n - 1) / 2;
+  const rowEnd = rowStart + n;
+  for (let j = rowStart; j < rowEnd; j++) {
+    const row = [];
+    const colStart = position.col - (n - 1) / 2;
+    const colEnd = colStart + n;
+    for (let i = colStart; i < colEnd; i++) {
+      const isCharacter = j === position.row && i === position.col;
+      const jr = (j + height) % height;
+      const ir = (i + width) % width;
+      row.push(<Tile
+        key={i}
+        character={isCharacter}
+        position={{row: jr, col: ir}}
+      />);
+    }
+    board.push(<div key={j} className="row">{row}</div>);
   }
   return (
     <div>
@@ -22,7 +34,7 @@ const FlatTorus = (props: PropsFromRedux) => {
 };
 
 const mapStateToProps = (state: RootState) => {
-  return { value: state.board };
+  return { ...state.board };
 };
 const connector = connect(mapStateToProps);
 type PropsFromRedux = ConnectedProps<typeof connector>

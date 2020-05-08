@@ -1,13 +1,23 @@
 import React from "react";
 
 import './Tile.css';
+import Character from "./Character";
 
-const characterSVG = 'https://upload.wikimedia.org/wikipedia/commons/f/f5/ACC-L16832.svg';
+interface TileProps {
+  character: boolean;
+  position: {
+    row: number,
+    col: number
+  }
+}
 
-const Tile = () => {
+const Tile = (props: TileProps) => {
   return (
     <div className="tile">
-      <img src={characterSVG} alt="" />
+      <div style={{float: "left"}}>
+        {`(${props.position.col}, ${props.position.row})`}
+      </div>
+      {props.character ? <Character /> : undefined}
     </div>
   );
 };
