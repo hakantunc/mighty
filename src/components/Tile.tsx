@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
 import './Tile.css';
-import Character from "./Character";
+import Character from './Character';
 
 interface TileProps {
   character: boolean;
@@ -11,15 +11,13 @@ interface TileProps {
   }
 }
 
-const Tile = (props: TileProps) => {
-  return (
-    <div className="tile">
-      <div style={{float: "left"}}>
-        {`(${props.position.col}, ${props.position.row})`}
-      </div>
-      {props.character ? <Character /> : undefined}
+const Tile = (props: TileProps) => (
+  <div className="tile">
+    <div style={{ float: 'left' }}>
+      {`(${props.position.col}, ${props.position.row})`}
     </div>
-  );
-};
+    {props.character ? <Character /> : undefined}
+  </div>
+);
 
 export default Tile;

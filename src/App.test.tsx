@@ -9,7 +9,7 @@ test('renders the App', () => {
   const { getByText } = render(
     <Provider store={store}>
       <App />
-    </Provider>
+    </Provider>,
   );
   const linkElement = getByText(/hello there/i);
   expect(linkElement).toBeInTheDocument();

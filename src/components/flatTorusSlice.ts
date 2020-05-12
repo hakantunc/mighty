@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
 
 interface FlatTorus {
@@ -16,29 +17,31 @@ const initialState: FlatTorus = {
   height: size,
   position: {
     row: 0,
-    col: 0
-  }
-}
+    col: 0,
+  },
+};
 
 const flatTorusSlice = createSlice({
   name: 'flatTorusSlice',
-  initialState: initialState,
+  initialState,
   reducers: {
-    goNorth: state => {
+    goNorth: (state) => {
       state.position.row = (state.position.row + size - 1) % size;
     },
-    goSouth: state => {
+    goSouth: (state) => {
       state.position.row = (state.position.row + size + 1) % size;
     },
-    goWest: state => {
+    goWest: (state) => {
       state.position.col = (state.position.col + size - 1) % size;
     },
-    goEast: state => {
+    goEast: (state) => {
       state.position.col = (state.position.col + size + 1) % size;
     },
-  }
+  },
 });
 
-export const { goNorth, goSouth, goWest, goEast } = flatTorusSlice.actions;
+export const {
+  goNorth, goSouth, goWest, goEast,
+} = flatTorusSlice.actions;
 
 export default flatTorusSlice.reducer;
