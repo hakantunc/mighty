@@ -9,6 +9,7 @@ import { decrement } from './components/counterSlice';
 import {
   goNorth, goSouth, goWest, goEast,
 } from './components/flatTorusSlice';
+import NucleobaseComponent, { Nucleobase } from './components/Nucleobase';
 
 const App = (props: PropsFromRedux) => {
   const onKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
@@ -51,6 +52,9 @@ const App = (props: PropsFromRedux) => {
       </div>
       <div className="row justify-content-around">
         <Counter />
+      </div>
+      <div className="row justify-content-around">
+        <NucleobaseComponent base={Nucleobase.Guanine} />
       </div>
     </div>
   );
